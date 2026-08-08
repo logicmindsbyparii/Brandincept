@@ -1,0 +1,366 @@
+/* Hero.css - Clean version with only hover effects */
+
+/* Base styles */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Section Base */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+/* Simple overlay */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+/* Container */
+.hero-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+    .hero-container {
+        padding: 0 2rem;
+    }
+}
+
+/* Grid Layout */
+.hero-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    padding-top: 8rem;
+}
+
+@media (min-width: 1024px) {
+    .hero-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+    }
+}
+
+/* Content Column */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@media (min-width: 1024px) {
+    .hero-content {
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
+/* Title */
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1e293b;
+    max-width: 64rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 3.75rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-title {
+        font-size: 4.5rem;
+    }
+}
+
+/* Title Accent */
+.hero-title-accent {
+    color: #b5111a;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.hero-title-accent:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 15px rgba(181, 17, 26, 0.3);
+}
+
+/* Description */
+.hero-description {
+    font-size: 1.125rem;
+    color: #334155;
+    max-width: 36rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .hero-description {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-description {
+        font-size: 1.5rem;
+    }
+}
+
+/* CTA Button - Only hover effects */
+.hero-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: #b5111a;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(181, 17, 26, 0.2);
+    border: none;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .hero-cta {
+        padding: 1rem 2.5rem;
+        font-size: 1.25rem;
+    }
+}
+
+/* Only hover effects on button */
+.hero-cta:hover {
+    background: #8b0d14;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(181, 17, 26, 0.3);
+}
+
+.hero-cta:hover svg {
+    transform: translateX(5px);
+}
+
+.hero-cta svg {
+    transition: transform 0.3s ease;
+}
+
+/* Animation Column */
+.hero-animation {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    animation: fadeIn 0.8s ease-out 0.2s both;
+}
+
+@media (min-width: 768px) {
+    .hero-animation {
+        height: 400px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-animation {
+        height: 600px;
+        padding-bottom: 5rem;
+    }
+}
+
+/* Animation Container */
+.animation-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+/* Only hover effect on animation */
+.animation-container:hover {
+    transform: scale(1.02);
+}
+
+.animation-container lottie-player,
+.animation-container svg,
+.animation-container div {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 15px -3px rgba(0, 0, 0, 0.1));
+}
+
+/* Simple glow - static */
+.animation-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(181, 17, 26, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(30px);
+    pointer-events: none;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+/* Only hover effect on scroll indicator */
+.scroll-indicator:hover {
+    opacity: 1;
+}
+
+.scroll-text {
+    color: #334155;
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.scroll-mouse {
+    width: 1.5rem;
+    height: 2.5rem;
+    border: 2px solid #334155;
+    border-radius: 9999px;
+    display: flex;
+    justify-content: center;
+    padding: 0.25rem;
+}
+
+.scroll-wheel {
+    width: 0.375rem;
+    height: 0.75rem;
+    background: #334155;
+    border-radius: 9999px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(8px);
+    }
+
+    60% {
+        transform: translateY(4px);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .hero-cta {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .scroll-indicator {
+        bottom: 1.5rem;
+    }
+
+    .hero-animation {
+        height: 250px;
+    }
+}
+
+/* Loading state */
+.animation-loading {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+}
+
+.animation-loading::after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 3px solid #b5111a;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-section,
+    .hero-content,
+    .hero-animation,
+    .scroll-wheel,
+    .animation-loading::after {
+        animation: none;
+    }
+
+    .hero-cta:hover,
+    .animation-container:hover,
+    .hero-title-accent:hover {
+        transform: none;
+    }
+}
