@@ -52,7 +52,7 @@ export const projectsData = [
         brand: "Purple",
         description: "New store opening in Ahmedabad. Premium retail expansion in Gujarat.",
         tags: ["Ahmedabad", "New Store Opening", "Retail"],
-        image: "/assests/purple9project.png",
+        image: "/assests/purpleproject.png",
         highlight: "New Store Opening in Ahmedabad"
     }
 ];
