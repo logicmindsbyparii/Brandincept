@@ -15,7 +15,8 @@ const PORT = process.env.PORT || 5000;
 // app.use(cors());
 app.use(cors({
     origin: [   
-        'https://brandincept-frontend.vercel.app',  // ← frontend deploy hone ke baad yahan lagao
+        'https://brandincept-frontend.vercel.app',  
+        'https://brandincept.vercel.app',
         'https://brandincept.com',
         'https://www.brandincept.com'
     ],
