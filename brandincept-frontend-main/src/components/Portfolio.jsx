@@ -10,7 +10,7 @@ const Portfolio = () => {
     useEffect(() => {
         const fetchProjects = async () => {
             try {
-                const response = await fetch(`${API_URL}/api/projects`);
+                const response = await fetch(`${API_URL}/api/projects?t=${new Date().getTime()}`);
                 if (response.ok) {
                     const result = await response.json();
                     if (result.success) {
