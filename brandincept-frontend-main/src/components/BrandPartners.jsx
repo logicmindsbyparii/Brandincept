@@ -21,18 +21,24 @@ const BrandPartners = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const fetchPartners = async () => {
+        const fetchPartners = async (retries = 10) => {
             try {
                 const response = await fetch(`${API_URL}/api/partners`)
                 if (response.ok) {
                     const result = await response.json();
                     if (result.success) {
                         setLogos(result.data);
+                        setIsLoading(false);
+                        return;
                     }
                 }
             } catch (error) {
                 console.error('Failed to fetch partners:', error);
-            } finally {
+            }
+            
+            if (retries > 0) {
+                setTimeout(() => fetchPartners(retries - 1), 3000);
+            } else {
                 setIsLoading(false);
             }
         };

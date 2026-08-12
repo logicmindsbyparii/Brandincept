@@ -8,18 +8,24 @@ const Portfolio = () => {
     const [visibleCount, setVisibleCount] = useState(4); // Show first 4 initially
 
     useEffect(() => {
-        const fetchProjects = async () => {
+        const fetchProjects = async (retries = 10) => {
             try {
                 const response = await fetch(`${API_URL}/api/projects?t=${new Date().getTime()}`);
                 if (response.ok) {
                     const result = await response.json();
                     if (result.success) {
                         setProjects(result.data);
+                        setIsLoading(false);
+                        return;
                     }
                 }
             } catch (error) {
                 console.error('Failed to fetch projects:', error);
-            } finally {
+            }
+            
+            if (retries > 0) {
+                setTimeout(() => fetchProjects(retries - 1), 3000);
+            } else {
                 setIsLoading(false);
             }
         };
