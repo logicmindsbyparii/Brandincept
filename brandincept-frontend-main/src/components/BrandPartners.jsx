@@ -16,7 +16,20 @@ const BrandPartners = () => {
         { name: "Mahesh Pavbhaji", src: "/assests/maheshpavbhaji-removebg.png", desc: "International Cafe" },
         { name: "Purple Spa", src: "/assests/purplespa-removebg.png", desc: "Wellness" },
         { name: "McDonald's", src: "/assests/Macd-removebg.png", desc: "International Cafe" },
-        { name: "Connplex Cinema", src: "/assests/connplex-logo.png", desc: "Entertainment" }
+        { name: "Connplex Cinema", src: "/assests/connplex-logo.png", desc: "Entertainment" },
+        { name: "Anytime Fitness", src: "/assests/new-logo/Anytime-fitness.png", desc: "Fitness & Gym" },
+        { name: "The Fern Hotels", src: "/assests/new-logo/Fern.png", desc: "Hospitality" },
+        { name: "Marriott", src: "/assests/new-logo/Marriott.png", desc: "Hospitality" },
+        { name: "Mercure Hotels", src: "/assests/new-logo/Mercure.png", desc: "Hospitality" },
+        { name: "Regenta Hotels", src: "/assests/new-logo/Regenta.png", desc: "Hospitality" },
+        { name: "Shoppers Stop", src: "/assests/new-logo/Shoppers-Stop.png", desc: "Retail & Fashion" },
+        { name: "Blinkit", src: "/assests/new-logo/blinkit.png", desc: "Quick Commerce" },
+        { name: "Bloom Hotels", src: "/assests/new-logo/bloom-hotels.png", desc: "Hospitality" },
+        { name: "ibis Hotels", src: "/assests/new-logo/ibis.png", desc: "Hospitality" },
+        { name: "MiniKlub", src: "/assests/new-logo/miniklub.png", desc: "Kids Lifestyle" },
+        { name: "Style Union", src: "/assests/new-logo/styleunion.png", desc: "Fashion & Apparel" },
+        { name: "Treebo Hotels", src: "/assests/new-logo/treebo.png", desc: "Hospitality" },
+        { name: "Zudio", src: "/assests/new-logo/zudio.png", desc: "Fashion & Apparel" }
     ]);
     const [isLoading, setIsLoading] = useState(true);
 
