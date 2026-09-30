@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Send, Phone, Mail, MapPin } from 'lucide-react';
 // ── Import the real photos ──
-import ruchitImg  from '/assests/ruchitmehta.jpeg';
-import pinkeshImg from '/assests/pinkeshparekh.jpeg';
+import ruchitImg  from '/assests/ruchitmehta.jpeg.png';
+import pinkeshImg from '/assests/pinkeshparekh.jpeg.png';
 import API_URL from '../config';
 
 
